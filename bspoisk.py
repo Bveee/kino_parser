@@ -10,15 +10,13 @@ def main():
     div = soup.find('div', {"class": "block_left"})
     a = div.find('a', {"name": "producer"})
     act_name = a.find_previous_siblings('div')
-
-    ###
+    # разобрать кусок
     # aact = actn.find('a', {"name": "actor"})
     # actname = aact.find_previous_siblings('div')
     # print(type(a))
-    ###
-    
+    #
     act = act_name[-4::-1]  # переворачивает список, как на сайте и обрезает режисера 1
-
+    print(act)
     dict_act = dict()
     for index, info_act in enumerate(act):
         name = info_act.find('div', {'class': 'name'})
